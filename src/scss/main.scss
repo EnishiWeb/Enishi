@@ -1,0 +1,41 @@
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 foundation
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+@forward 'foundation/_reset';
+@forward 'foundation/_base';
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 object
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// :::::::::::::::::::::::::::::::::::::::::::::
+//	🔸 component
+// :::::::::::::::::::::::::::::::::::::::::::::
+@forward 'object/component/_btn';
+@forward 'object/component/_heading';
+@forward 'object/component/_card';
+@forward 'object/component/_unit';
+@forward 'object/component/_form';
+@forward 'object/component/_menu';
+@forward 'object/component/_deco';
+@forward 'object/component/_animation';
+@forward 'object/component/_list';
+@forward 'object/component/_modal';
+@forward 'object/_utility';
+// :::::::::::::::::::::::::::::::::::::::::::::
+//	🔸 project
+// :::::::::::::::::::::::::::::::::::::::::::::
+@forward 'project/_top';
+@forward 'project/_contact';
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 layout
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+@forward 'layout/_header';
+@forward 'layout/_footer';
+@forward 'layout/_inner';

@@ -1,0 +1,52 @@
+@charset "utf-8";
+@use '../../foundation' as *;
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 num
+//
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-list-num {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	counter-reset: num-parent;
+
+	&__item {
+		counter-increment: num-parent;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid rgba($c-base, 0.6);
+	}
+	.c-heading-default {
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+		position: relative;
+		&::before {
+			content: counter(num-parent) '.';
+			position: absolute;
+			left: 0;
+		}
+	}
+	.link {
+		text-decoration: underline;
+	}
+}
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 num child
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-list-num-child {
+	counter-reset: num-child;
+	&__item {
+		counter-increment: num-child;
+		position: relative;
+		padding-left: 2rem;
+		&::before {
+			content: '(' counter(num-child) ')';
+			font-weight: 500;
+			position: absolute;
+			left: 0;
+		}
+	}
+}

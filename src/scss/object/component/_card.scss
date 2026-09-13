@@ -1,0 +1,239 @@
+@charset "utf-8";
+@use '../../foundation' as *;
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 case
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-card-case {
+	max-width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem 2rem 1rem 1rem;
+	position: relative;
+	&__label {
+		margin-bottom: 1rem;
+	}
+	&__title {
+		font-size: 1.125rem;
+		margin-bottom: 1.25rem;
+	}
+
+	&:not(:last-of-type)::after {
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 70px 0px 70px 30px;
+		border-color: transparent transparent transparent #d2e1e7;
+		position: absolute;
+		top: 3rem;
+		right: -2rem;
+	}
+
+	@media (max-width: $Bp-Tab) {
+		max-width: unset;
+
+		&:not(:last-of-type)::after {
+			border-right: 40px solid transparent;
+			border-left: 40px solid transparent;
+			border-top: 30px solid #d2e1e7;
+			border-bottom: 0;
+			top: inherit;
+			right: inherit;
+			bottom: -3rem;
+		}
+	}
+}
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 image
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-card-image {
+	max-width: 428px;
+	width: fit-content;
+	padding: 48px 24px 24px;
+	position: relative;
+	background: #d9d9d9;
+
+	@media (max-width: $Bp-Tab) {
+		padding: 48px 16px 24px;
+	}
+
+	&__label {
+		position: absolute;
+		top: -22px;
+		left: 0;
+		right: 0;
+		margin-inline: auto;
+		background: #605e5e;
+	}
+	&__img {
+		max-width: 380px;
+		margin-bottom: 1rem;
+	}
+
+	&:first-of-type {
+		@media (max-width: $Bp-Tab) {
+			padding-bottom: 48px;
+		}
+	}
+	&:last-of-type {
+		background: #cdedf1;
+
+		.c-card-image__label {
+			background: $c-main;
+		}
+	}
+}
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 skill
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-card-skill {
+	padding: 1.5rem;
+	background: rgba($color: #ffffff, $alpha: 0.06);
+	border: 1px solid rgba($color: #fdfcf9, $alpha: 0.3);
+	backdrop-filter: blur(4px);
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.25rem;
+	}
+
+	&__heading {
+		font-size: 1.25rem;
+		letter-spacing: 0;
+		color: $c-base;
+		font-family: $font-sub;
+		@media (max-width: $Bp-Tab) {
+			font-size: 1.125rem;
+		}
+	}
+
+	&__graphic {
+		width: 5rem;
+	}
+
+	&__text {
+		color: $c-base;
+	}
+}
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 flow
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-card-flow {
+	display: flex;
+	gap: 1rem;
+	align-items: flex-start;
+	@media (max-width: $Bp-Tab) {
+		align-items: center;
+	}
+	// :::::::::::::::::::::::::::::::::::::::::::::
+	//	🔸 step
+	// :::::::::::::::::::::::::::::::::::::::::::::
+	&__step {
+		min-width: 5rem;
+		width: 5rem;
+		aspect-ratio: 1 / 1;
+		color: $c-accent;
+		font-family: $font-sub;
+		line-height: 1;
+		gap: 4px;
+		justify-content: center;
+		border-radius: 50%;
+		border: 1px solid $c-accent;
+		background: $c-base;
+
+		@media (max-width: $Bp-Tab) {
+			min-width: 4rem;
+			width: 4rem;
+		}
+
+		&-label {
+			font-size: 0.875rem;
+			@media (max-width: $Bp-Tab) {
+				font-size: 0.75rem;
+			}
+		}
+
+		&-number {
+			font-size: 1.5rem;
+			@media (max-width: $Bp-Tab) {
+				font-size: 1.25rem;
+			}
+		}
+	}
+
+	// :::::::::::::::::::::::::::::::::::::::::::::
+	//	🔸 body
+	// :::::::::::::::::::::::::::::::::::::::::::::
+	&__body {
+		padding: 1rem 2rem;
+		@media (max-width: $Bp-Tab) {
+			padding: 0;
+		}
+	}
+
+	// :::::::::::::::::::::::::::::::::::::::::::::
+	//	🔸 heading
+	// :::::::::::::::::::::::::::::::::::::::::::::
+	&__heading {
+		font-size: 1.125rem;
+		margin-bottom: 1rem;
+	}
+}
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 works
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-card-work {
+	background: $c-white;
+	padding: 2rem;
+	border-radius: 1rem;
+	overflow: hidden;
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	&__img {
+		width: 100%;
+	}
+
+	&__explanation {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+
+		&-tags {
+			display: flex;
+			gap: 0.8rem 0.5rem;
+			flex-wrap: wrap;
+		}
+	}
+
+	.c-unit-tag {
+		@media (max-width: $Bp-Tab) {
+			font-size: 0.875rem;
+			padding: 0.5rem 0.75rem;
+		}
+	}
+}

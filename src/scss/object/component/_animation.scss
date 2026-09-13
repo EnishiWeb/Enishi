@@ -1,0 +1,89 @@
+@charset "utf-8";
+@use '../../foundation' as *;
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 fade
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-animation-fade {
+	translate: 0 6px;
+	opacity: 0;
+	transition-property: opacity, translate;
+	transition-duration: var(--dur, 0.3s);
+	transition-timing-function: ease;
+	transition-delay: var(--delay, 0s);
+
+	&.is-animated {
+		translate: 0 0;
+		opacity: 1;
+	}
+}
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 bounce
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-animation-bounce {
+	display: inline-block;
+	&.is-animated {
+		animation: bounce 0.6s ease;
+		animation-delay: var(--delay, 1.6s);
+	}
+}
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateY(0);
+		translate: 0 0;
+	}
+	40% {
+		translate: 0 -8px;
+	}
+	60% {
+		translate: 0 4px;
+	}
+}
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 動きを減らす設定の人には止める
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+@media (prefers-reduced-motion: reduce) {
+	.c-animation-fade,
+	.c-animation-bounce.is-animated {
+		animation: none !important;
+		transition: none !important;
+		opacity: 1;
+		translate: 0 0;
+	}
+}
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 typing
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-animate-typing {
+	display: block;
+	width: fit-content;
+	white-space: nowrap;
+
+	clip-path: inset(0 100% 0 0);
+
+	&.is-animated {
+		animation: typing var(--dur, 1s) steps(var(--length)) var(--delay, 0s) both;
+	}
+}
+
+@keyframes typing {
+	from {
+		clip-path: inset(0 100% 0 0);
+	}
+
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}

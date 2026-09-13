@@ -1,0 +1,81 @@
+@charset "utf-8";
+@use '../../foundation' as *;
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 default
+//
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-modal-default {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100svh;
+	background: $c-gradient-blue;
+	padding: 8rem 1rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.3s;
+	z-index: 25000;
+	overflow-y: scroll;
+	-ms-overflow-style: none; // IE,edge用
+	scrollbar-width: none; // FireFox用
+	overscroll-behavior: none; // 裏側のコンテンツのスクロールを無効にする
+
+	&::-webkit-scrollbar {
+		// Chrome,Safari用
+		display: none;
+	}
+
+	// is-active ----------------------
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__inner {
+		position: relative;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	&__content {
+		color: $c-base;
+	}
+
+	&__close {
+		position: fixed;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		top: 2rem;
+		right: 2rem;
+		width: 3.5rem;
+		aspect-ratio: 1 / 1;
+		font-size: 1.75rem;
+		font-weight: bold;
+		color: $c-accent;
+		background: $c-base;
+		border-radius: 50%;
+		cursor: pointer;
+		@media (max-width: $Bp-Tab) {
+			top: 1.5rem;
+			right: 1.5rem;
+			width: 2.5rem;
+			font-size: 1.375rem;
+		}
+	}
+
+	.c-heading-section {
+		.text {
+			&::before {
+				color: $c-base;
+			}
+		}
+		margin-bottom: 4rem;
+		@media (max-width: $Bp-Tab) {
+			margin-bottom: 2.5rem;
+		}
+	}
+}

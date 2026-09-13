@@ -1,0 +1,63 @@
+@charset "utf-8";
+@use '../../foundation' as *;
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 default
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-heading-default {
+	font-size: 1.125rem;
+	letter-spacing: 0.1em;
+	line-height: 1.75;
+}
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 section
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-heading-section {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	@media (max-width: $Bp-Tab) {
+		align-items: center;
+	}
+	.ja {
+		font-size: 0.875rem;
+		color: $c-text-sub;
+		letter-spacing: 0.05em;
+		text-align: center;
+		white-space: nowrap;
+	}
+
+	.en {
+		font-size: 2rem;
+		color: $c-main;
+		font-family: $font-sub;
+		line-height: 2;
+		letter-spacing: 0;
+		text-transform: capitalize;
+		@media (max-width: $Bp-Tab) {
+			font-size: 1.25rem;
+		}
+	}
+
+	// :::::::::::::::::::::::::::::::::::::::::::::
+	//	🔸 color-white
+	// :::::::::::::::::::::::::::::::::::::::::::::
+	&._color-white {
+		.ja,
+		.en {
+			color: $c-base;
+		}
+	}
+
+	// :::::::::::::::::::::::::::::::::::::::::::::
+	//	🔸 align-center
+	// :::::::::::::::::::::::::::::::::::::::::::::
+	&._align-center {
+		align-items: center;
+	}
+}

@@ -1,0 +1,76 @@
+@charset "utf-8";
+@use '../../foundation' as *;
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 tag
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-unit-tag {
+	display: block;
+	width: fit-content;
+	padding: 0.5rem 2rem;
+	text-align: center;
+	border-radius: 2rem;
+	border: 1px solid $c-accent;
+	color: $c-accent;
+
+	&._bg-color {
+		border: none;
+		color: $c-base;
+	}
+}
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 ovl
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-unit-ovl {
+	width: 100%;
+	height: 100vh;
+	background: rgba($c-text, 0.8);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 15000;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s ease;
+	&.is-active {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//
+//	🌟 heading-page
+//
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.c-unit-heading-page {
+	padding: 120px 0 60px;
+	background-position: center;
+	background-size: cover;
+	@media (max-width: $Bp-Tab) {
+		padding: 100px 0 40px;
+	}
+
+	.c-heading-section {
+		@media (max-width: $Bp-Tab) {
+			align-items: flex-start;
+		}
+		.ja {
+			font-size: 1rem;
+			@media (max-width: $Bp-Tab) {
+				font-size: 0.9375rem;
+			}
+		}
+		.en {
+			font-size: 3rem;
+			@media (max-width: $Bp-Tab) {
+				font-size: 2rem;
+			}
+		}
+	}
+}
